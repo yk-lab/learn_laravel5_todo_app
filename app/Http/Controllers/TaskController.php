@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TaskController extends Controller
 {
@@ -35,7 +36,7 @@ class TaskController extends Controller
               ->withErrors($validator);
       }
       $task = new Task;
-      $task->name = $request-> task_name;
+      $task->name = $request->task_name;
       $task->save();
       return redirect('/');
   }
