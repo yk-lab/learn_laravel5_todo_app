@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Task;
 use Illuminate\Http\Request;
+use App\Http\Requests\TaskRequest;
 use Illuminate\Support\Facades\Validator;
 
 class TaskController extends Controller
@@ -25,16 +26,16 @@ class TaskController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(TaskRequest $request)
   {
-      $validator = Validator::make($request->all(), [
-          'task_name' => 'required|max:255',
-      ]);
-      if ($validator->fails()) {
-          return redirect('/')
-              ->withInput()
-              ->withErrors($validator);
-      }
+      // $validator = Validator::make($request->all(), [
+      //     'task_name' => 'required|max:255',
+      // ]);
+      // if ($validator->fails()) {
+      //     return redirect('/')
+      //         ->withInput()
+      //         ->withErrors($validator);
+      // }
       $task = new Task;
       $task->name = $request->task_name;
       $task->save();
