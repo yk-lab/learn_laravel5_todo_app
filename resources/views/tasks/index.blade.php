@@ -17,7 +17,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Add
+                        <i class="fa fa-plus"></i> 追加
                     </button>
                 </div>
             </div>
@@ -27,7 +27,7 @@
     @if (count($tasks) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
-                Task List
+                タスク一覧
             </div>
 
             <div class="panel-body">
